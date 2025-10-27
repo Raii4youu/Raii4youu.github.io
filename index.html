@@ -5,46 +5,56 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>My Memories Gallery</title>
   <style>
-    body {
-      font-family: 'Poppins', sans-serif;
-      background: #f8f9fa;
-      margin: 0;
-      padding: 0;
-      text-align: center;
-    }
+  body {
+    font-family: 'Poppins', sans-serif;
+    background: #f8f9fa;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+  }
 
-    h1 {
-      margin-top: 30px;
-      color: #3ADC87;
-      font-size: 2.5em;
-    }
+  h1 {
+    margin-top: 30px;
+    color: #3ADC87;
+    font-size: 2.5em;
+  }
 
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 15px;
-      padding: 20px;
-      max-width: 1100px;
-      margin: 0 auto;
-    }
+  .gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+    padding: 20px;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
 
-    .thumb {
-      position: relative;
-      cursor: pointer;
-    }
+  .thumb {
+    position: relative;
+    overflow: hidden;
+    border-radius: 15px;
+    transition: transform 0.3s ease;
+  }
 
-    .thumb img, .thumb video {
-      width: 100%;
-      height: 250px;
-      object-fit: cover;
-      border-radius: 15px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-      transition: transform 0.3s;
-    }
+  .thumb:hover {
+    transform: scale(1.05);
+  }
 
-    .thumb:hover img, .thumb:hover video {
-      transform: scale(1.05);
-    }
+  .thumb img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 15px;
+    display: block;
+    background-color: transparent;
+  }
+
+  video {
+    width: 100%;
+    border-radius: 15px;
+    display: block;
+  }
+</style>
+  
 
     /* Lightbox */
     .lightbox {
@@ -64,7 +74,7 @@
     }
 
     .lightbox-content {
-      max-width: 90%;
+      max-width: 90%
       max-height: 80%;
     }
 
